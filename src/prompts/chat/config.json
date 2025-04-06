@@ -17,7 +17,7 @@
   "augmentation": {
       "augmentation_type": "none",
       "data_sources": {
-        "local-search": 5000
+        "assistant-search": 5000
       }
    }
 }
