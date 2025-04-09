@@ -28,15 +28,10 @@ model = OpenAIModel(
     )
 )
     
-# PromptManager
-prompts = PromptManager(
-    PromptManagerOptions(prompts_folder=f"{os.getcwd()}/prompts")
-)
+prompts = PromptManager(PromptManagerOptions(prompts_folder=f"{os.getcwd()}/prompts"))
 
-# Registrar DataSource
-my_data_source = MyDataSource("assistant-search")  # O nome deve bater com config.json
+my_data_source = MyDataSource('local-search')
 prompts.add_data_source(my_data_source)
-
 
 planner = ActionPlanner(
     ActionPlannerOptions(model=model, prompts=prompts, default_prompt="chat")
