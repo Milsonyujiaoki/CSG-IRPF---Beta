@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from openai import AsyncOpenAI, APIConnectionError, RateLimitError, APIError, NotFoundError
 
 # Carrega as variáveis de ambiente
-load_dotenv(dotenv_path=r"C:\Projetos\Trabalho\ChatBot\ChatBot\.env")
+load_dotenv(dotenv_path=r"C:\Users\Maoki\TeamsApps\CSG IRPF - Beta\.env")
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID", "asst_rhFLyYpv6nFMHnX7mmUzb2xv")
