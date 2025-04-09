@@ -5,6 +5,7 @@ from openai import AsyncOpenAI, APIConnectionError, RateLimitError, APIError, No
 
 # Carrega as variáveis de ambiente
 load_dotenv(dotenv_path=r"C:\Users\Maoki\TeamsApps\CSG IRPF - Beta\.env")
+#load_dotenv(dotenv_path=r"C:\Users\chat_boot\Documents\GitHub\CSG-IRPF---Beta\.env")
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID", "asst_rhFLyYpv6nFMHnX7mmUzb2xv")
@@ -55,7 +56,7 @@ async def interagir_com_assistente(mensagem_usuario: str) -> str:
             for msg in messages.data:
                 if msg.role == "assistant" and msg.run_id == run.id:
                     resposta = msg.content[0].text.value
-                    print(f"[DEBUG] Resposta da IA: {resposta}")
+                    print(f"[DEBUG] Resposta do Assistente: {resposta}")
                     return resposta
 
             return "Não foi possível encontrar a resposta gerada."

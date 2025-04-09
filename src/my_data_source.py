@@ -32,7 +32,7 @@ class MyDataSource(DataSource):
             print(f"[DEBUG] Resposta do assistente: {resposta}")
 
             if resposta:
-                texto = f"\nResposta da IA:\n{resposta}\n"
+                texto = f"\nResposta do Assistente:\n{resposta}\n"
                 return Result(self.formatDocument(texto), len(texto), False)
             else:
                 return Result('', 0, False)
