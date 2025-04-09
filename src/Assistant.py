@@ -5,7 +5,7 @@ import asyncio
 from openai import APIConnectionError, RateLimitError, APIError, NotFoundError
 
 # Carrega as variáveis de ambiente do arquivo .env
-load_dotenv(dotenv_path=r"C:\Projetos\Trabalho\ChatBot\ChatBot\.env")
+load_dotenv(dotenv_path=r"C:\Users\chat_boot\Documents\GitHub\CSG-IRPF---Beta\.env")
 
 # Define a chave da API
 openai.api_key = os.getenv('OPENAI_API_KEY')
@@ -20,9 +20,10 @@ client = openai.AsyncOpenAI(
 # Função assíncrona para interagir com o Assistente
 async def interagir_com_assistente(mensagem_usuario):
     try:
+        # ESCOPOS [{CorpUltron: asst_rhFLyYpv6nFMHnX7mmUzb2xv} {Teams Assistente: asst_TmB8aYjD04Tf64YvpFTIoMW4}]
         assistant = await client.beta.assistants.retrieve("asst_rhFLyYpv6nFMHnX7mmUzb2xv")
         
-        # Recupera a Thread
+        # ESCOPOS [{CorpUltron:  thread_thddDtGOVSkmntnj3iDGKhh3 thread_G8ttyitsHYSb5h2nEXgWEOV6 }{Teams Assistente: thread_0b1mMFnXWkDZRuHCmNdGpE5w}]
         try:
             thread = await client.beta.threads.retrieve("thread_G8ttyitsHYSb5h2nEXgWEOV6")
         except NotFoundError:
