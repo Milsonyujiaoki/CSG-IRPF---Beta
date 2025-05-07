@@ -8,7 +8,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: CSG IRPF - Beta${{APP_NAME_SUFFIX}}
+      name: CSG-GPT IRPF${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -18,7 +18,7 @@ provision:
   - uses: aadApp/create
     with:
       # The Microsoft Entra application's display name
-      name: CSG IRPF - Beta${{APP_NAME_SUFFIX}}
+      name: CSG-GPT IRPF${{APP_NAME_SUFFIX}}
       generateClientSecret: true
       signInAudience: AzureADMultipleOrgs
     writeToEnvironmentFile:
