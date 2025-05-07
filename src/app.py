@@ -12,6 +12,7 @@ from bot import bot_app
 
 routes = web.RouteTableDef()
 
+
 @routes.post("/api/messages")
 async def on_messages(req: web.Request) -> web.Response:
     res = await bot_app.process(req)
@@ -20,6 +21,7 @@ async def on_messages(req: web.Request) -> web.Response:
         return res
 
     return web.Response(status=HTTPStatus.OK)
+
 
 app = web.Application(middlewares=[aiohttp_error_middleware])
 app.add_routes(routes)

@@ -6,8 +6,7 @@ from teams.ai.data_sources import DataSource
 from teams.state.state import TurnContext
 from teams.state.memory import Memory
 
-from Assistant import interagir_com_assistente  # Importando a função do outro módulo
-import asyncio  # Necessário para chamadas assíncronas
+from Assistant import interagir_com_assistente  
 import chardet
 
 @dataclass
@@ -34,12 +33,12 @@ class MyDataSource(DataSource):
         for file in files:
             file_path = os.path.join(filePath, file)
     
-            # Detecta a codificação do arquivo
+            # Detecta a codifica��o do arquivo
             with open(file_path, 'rb') as f:
                 raw_data = f.read()
                 encoding = chardet.detect(raw_data)['encoding']
     
-            # Abre o arquivo usando a codificação detectada
+            # Abre o arquivo usando a codifica��o detectada
             try:
                 with open(file_path, 'r', encoding=encoding) as f:
                     self._data.append(f.read())
@@ -60,7 +59,7 @@ class MyDataSource(DataSource):
     
         result = ''
 
-        # Obtém resposta do Assistente
+        # Obt�m resposta do Assistente
         resposta_assistente = await interagir_com_assistente(query)
 
         # Adiciona a resposta do assistente no resultado
