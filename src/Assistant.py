@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 from openai import AsyncOpenAI, APIConnectionError, RateLimitError, APIError, NotFoundError
 
 # Carrega as variáveis de ambiente
-load_dotenv(dotenv_path=r"C:\Users\Maoki\TeamsApps\CSG IRPF - Beta\.env")
-#load_dotenv(dotenv_path=r"C:\Users\chat_boot\Documents\GitHub\CSG-IRPF---Beta\.env")
+load_dotenv()
+
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ASSISTANT_ID = os.getenv("OPENAI_ASSISTANT_ID", "asst_rhFLyYpv6nFMHnX7mmUzb2xv")
-THREAD_ID = os.getenv("OPENAI_THREAD_ID")
+THREAD_ID = os.getenv("OPENAI_THREAD_ID", "thread_G8ttyitsHYSb5h2nEXgWEOV6")
 
 client = AsyncOpenAI(
     api_key=OPENAI_API_KEY,
